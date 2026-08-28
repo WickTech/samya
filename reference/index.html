@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SĀMYA | Clean • Pure Veg • High Protein — Bhilai-Durg</title>
+<meta name="description" content="SĀMYA — fresh, high-protein, pure-veg meal bowls, salads, sandwiches & cold-pressed juices. Tossed fresh, crafted gourmet. Order in Bhilai-Durg via Zomato, Swiggy or WhatsApp.">
+<meta property="og:title" content="SĀMYA — Tossed Fresh, Crafted Gourmet">
+<meta property="og:description" content="Clean • Pure Veg • High Protein meals in Bhilai-Durg. Order now.">
+<meta property="og:image" content="logo.jpg">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lilac:#e3b8e6;
+    --lilac-soft:#f0dcf1;
+    --mauve:#8a7690;
+    --deep:#3d1636;
+    --plum:#5a2350;
+    --cream:#faf6fa;
+    --ink:#241022;
+    font-size:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Cormorant Garamond','Georgia',serif;font-weight:500;line-height:1.15;}
+  .script{font-family:'Caveat',cursive;}
+  .wordmark{
+    font-family:'Cormorant Garamond',serif;
+    letter-spacing:.42em;
+    font-weight:500;
+    text-transform:uppercase;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,246,250,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(61,22,54,.1);
+  }
+  nav.container{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;
+  }
+  .brand{display:flex;align-items:baseline;gap:10px;}
+  .brand .wordmark{font-size:1.35rem;color:var(--deep);}
+  .brand .hindi{font-size:.8rem;color:var(--mauve);letter-spacing:.05em;}
+  nav ul{display:flex;gap:30px;list-style:none;font-size:.9rem;align-items:center;}
+  nav ul a{border-bottom:2px solid transparent;padding-bottom:2px;transition:.2s;font-weight:500;}
+  nav ul a:hover{border-color:var(--plum);}
+  .nav-cta{
+    background:var(--plum);color:#fff;padding:10px 20px;border-radius:999px;
+    font-size:.82rem;font-weight:600;white-space:nowrap;border-bottom:none!important;
+  }
+  .nav-cta:hover{background:var(--deep);}
+  .menu-toggle{display:none;background:none;border:none;font-size:1.6rem;color:var(--deep);cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:88vh;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;
+    overflow:hidden;
+    padding:80px 24px;
+  }
+  .hero-bg{
+    position:absolute;inset:0;
+    background:url('logo.jpg') center/cover no-repeat;
+    transform:scale(1.05);
+  }
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 50% 45%, rgba(227,184,230,.35), rgba(61,22,54,.72) 75%),
+      linear-gradient(180deg, rgba(61,22,54,.35), rgba(61,22,54,.55));
+  }
+  .hero .container{position:relative;z-index:2;max-width:760px;}
+  .hero .eyebrow{
+    letter-spacing:.32em;text-transform:uppercase;font-size:.72rem;
+    color:#fff;margin-bottom:20px;opacity:.9;
+  }
+  .hero h1{
+    font-size:5rem;color:#fff;letter-spacing:.32em;text-transform:uppercase;
+    text-shadow:0 2px 24px rgba(61,22,54,.4);
+  }
+  .hero .hindi-big{color:#f0dcf1;font-size:1.4rem;margin-top:10px;letter-spacing:.1em;}
+  .hero .tagline{
+    font-family:'Caveat',cursive;font-size:2rem;
+    color:#fff;margin:26px auto 10px;
+  }
+  .hero .sub{
+    font-size:.92rem;color:#f0dcf1;margin-bottom:36px;max-width:520px;
+    margin-left:auto;margin-right:auto;
+  }
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{
+    font-weight:600;font-size:.88rem;
+    padding:15px 30px;border-radius:999px;display:inline-block;
+    transition:transform .15s ease, background .2s;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:#fff;color:var(--deep);}
+  .btn-primary:hover{background:var(--lilac-soft);}
+  .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.7);}
+  .btn-ghost:hover{background:rgba(255,255,255,.12);}
+  .btn-plum{background:var(--plum);color:#fff;}
+  .btn-plum:hover{background:var(--deep);}
+
+  /* SECTIONS */
+  .section{padding:84px 24px;}
+  .section-head{text-align:center;margin-bottom:52px;}
+  .section-head .eyebrow{
+    letter-spacing:.24em;text-transform:uppercase;
+    font-size:.72rem;color:var(--mauve);font-weight:600;
+  }
+  .section-head h2{font-size:2.6rem;color:var(--deep);margin-top:8px;}
+  .section-head p{color:#6b5a68;font-size:.95rem;margin-top:10px;max-width:560px;margin-inline:auto;}
+
+  /* STRIP */
+  .strip{
+    background:var(--deep);color:#fff;padding:15px 0;overflow:hidden;
+    font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+  }
+  .strip .track{
+    display:flex;gap:52px;white-space:nowrap;width:max-content;
+    animation:scroll 28s linear infinite;
+  }
+  .strip .track span.dot{color:var(--lilac);}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* SIGNATURE */
+  .sig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+  @media(max-width:860px){.sig-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;}}
+  .sig-card{
+    background:#fff;border-radius:20px;overflow:hidden;
+    border:1px solid rgba(61,22,54,.08);
+    box-shadow:0 12px 34px rgba(61,22,54,.07);
+    display:flex;flex-direction:column;
+  }
+  .sig-card .ph{aspect-ratio:4/5;overflow:hidden;background:var(--lilac-soft);}
+  .sig-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .sig-card:hover .ph img{transform:scale(1.05);}
+  .sig-card .body{padding:24px 22px 26px;}
+  .sig-card h3{font-size:1.5rem;color:var(--deep);}
+  .sig-card .kcal{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mauve);margin:6px 0 10px;font-weight:600;}
+  .sig-card p{font-size:.88rem;color:#5a4a58;}
+
+  /* MENU */
+  .tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;}
+  .tab-btn{
+    background:#fff;border:1px solid var(--mauve);color:var(--deep);
+    padding:10px 20px;border-radius:999px;font-size:.84rem;cursor:pointer;
+    font-family:inherit;font-weight:500;transition:.2s;
+  }
+  .tab-btn:hover{border-color:var(--deep);}
+  .tab-btn.active{background:var(--deep);color:#fff;border-color:var(--deep);}
+  .menu-panel{display:none;}
+  .menu-panel.active{display:block;animation:fade .3s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+  .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px 44px;}
+  @media(max-width:720px){.menu-grid{grid-template-columns:1fr;}}
+  .dish{border-bottom:1px dashed rgba(61,22,54,.22);padding-bottom:15px;}
+  .dish-row{display:flex;justify-content:space-between;gap:12px;align-items:baseline;}
+  .dish-row h4{font-size:1.2rem;color:var(--deep);}
+  .dish-row .price{font-weight:700;color:var(--plum);white-space:nowrap;font-size:.9rem;}
+  .dish p{font-size:.84rem;color:#5a4a58;margin-top:4px;}
+  .sub-label{
+    grid-column:1/-1;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--mauve);font-weight:600;margin-top:8px;
+  }
+  .menu-note{text-align:center;margin-top:30px;font-size:.82rem;color:#6b5a68;font-style:italic;}
+
+  /* PRINTED MENU */
+  .printed{background:#fff;}
+  .printed-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  @media(max-width:820px){.printed-grid{grid-template-columns:repeat(2,1fr);}}
+  .printed-grid figure{
+    border-radius:14px;overflow:hidden;cursor:zoom-in;
+    border:1px solid rgba(61,22,54,.1);background:var(--lilac-soft);
+    box-shadow:0 8px 20px rgba(61,22,54,.06);
+  }
+  .printed-grid img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;transition:transform .4s;}
+  .printed-grid figure:hover img{transform:scale(1.04);}
+  .printed-grid figcaption{
+    padding:10px 12px;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--deep);font-weight:600;background:#fff;
+  }
+
+  /* ABOUT */
+  .about{background:var(--lilac-soft);}
+  .about-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;}
+  @media(max-width:820px){.about-wrap{grid-template-columns:1fr;}}
+  .about-img{border-radius:22px;overflow:hidden;box-shadow:0 18px 44px rgba(61,22,54,.14);}
+  .about-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;}
+  .about-text h2{font-size:2.6rem;color:var(--deep);margin-bottom:8px;}
+  .about-text .lead{font-family:'Caveat',cursive;font-size:1.5rem;color:var(--plum);margin-bottom:16px;}
+  .about-text p{margin-bottom:14px;font-size:.94rem;color:#3a2a38;}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+  .badge{
+    font-size:.74rem;background:#fff;
+    border:1px solid var(--mauve);color:var(--deep);padding:7px 15px;border-radius:999px;font-weight:500;
+  }
+
+  /* WHY */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media(max-width:820px){.why-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;}}
+  .why-card{
+    background:#fff;border:1px solid rgba(61,22,54,.1);border-radius:16px;
+    padding:32px 26px;text-align:center;
+  }
+  .why-card .icon{font-size:1.9rem;margin-bottom:12px;}
+  .why-card h4{color:var(--deep);margin-bottom:8px;font-size:1.3rem;}
+  .why-card p{font-size:.86rem;color:#5a4a58;}
+
+  /* GALLERY */
+  .gallery{background:var(--deep);color:#fff;}
+  .gallery .section-head h2{color:#fff;}
+  .gallery .section-head .eyebrow{color:var(--lilac);}
+  .gallery .section-head p{color:#e0cbdf;}
+  .ig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media(max-width:860px){.ig-grid{grid-template-columns:repeat(2,1fr);}}
+  .ig-cell{
+    position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1;
+    display:block;background:var(--plum);
+  }
+  .ig-cell img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+  .ig-cell:hover img{transform:scale(1.07);}
+  .ig-cell .cap{
+    position:absolute;inset:0;display:flex;align-items:flex-end;
+    padding:14px;font-size:.76rem;line-height:1.35;
+    background:linear-gradient(180deg,transparent 45%,rgba(36,16,34,.86));
+    opacity:0;transition:opacity .3s;
+  }
+  .ig-cell:hover .cap{opacity:1;}
+  .gallery .handle{text-align:center;margin-top:34px;}
+  .gallery .handle a{
+    border-bottom:1px solid var(--lilac);padding-bottom:2px;font-weight:600;color:var(--lilac);
+  }
+
+  /* CONTACT */
+  .contact{background:var(--cream);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  @media(max-width:820px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-card{background:#fff;border:1px solid rgba(61,22,54,.1);border-radius:20px;padding:34px;}
+  .contact-card h3{margin-bottom:18px;font-size:1.5rem;color:var(--deep);}
+  .contact-row{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:.9rem;color:#3a2a38;}
+  .contact-row .dot{width:8px;height:8px;border-radius:50%;background:var(--plum);flex:none;}
+  .contact-card .btn{margin-top:12px;}
+  .order-platforms{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+  .platform{
+    font-size:.8rem;background:var(--lilac-soft);color:var(--deep);
+    padding:9px 17px;border-radius:999px;font-weight:500;
+  }
+
+  /* FOOTER */
+  footer{background:var(--ink);color:#cbb8c9;text-align:center;padding:34px 24px;font-size:.8rem;}
+  footer .wordmark{font-size:1.1rem;color:var(--lilac);margin-bottom:10px;}
+  footer a{color:var(--lilac);}
+
+  /* WHATSAPP FAB */
+  .fab{
+    position:fixed;bottom:22px;right:22px;z-index:60;
+    background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:1.5rem;
+    box-shadow:0 6px 20px rgba(0,0,0,.28);
+  }
+  .fab:hover{transform:scale(1.06);}
+
+  /* LIGHTBOX */
+  .lightbox{
+    position:fixed;inset:0;z-index:100;background:rgba(20,8,19,.92);
+    display:none;align-items:center;justify-content:center;padding:28px;cursor:zoom-out;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:100%;max-height:92vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+  .lightbox .close{
+    position:absolute;top:18px;right:24px;color:#fff;font-size:2rem;cursor:pointer;line-height:1;
+  }
+
+  @media(max-width:820px){
+    nav ul{
+      position:fixed;top:59px;left:0;right:0;background:var(--cream);
+      flex-direction:column;padding:22px 24px;gap:18px;align-items:flex-start;
+      transform:translateY(-160%);transition:transform .25s ease;
+      border-bottom:1px solid rgba(61,22,54,.12);
+    }
+    nav ul.open{transform:translateY(0);}
+    .menu-toggle{display:block;}
+    .hero{min-height:78vh;}
+    .hero h1{font-size:2.9rem;letter-spacing:.22em;}
+    .hero .hindi-big{font-size:1.1rem;}
+    .hero .tagline{font-size:1.6rem;}
+    .section{padding:64px 24px;}
+    .section-head h2,.about-text h2{font-size:2.1rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <a class="brand" href="#top">
+      <span class="wordmark">Sāmya</span>
+      <span class="hindi">साम्य</span>
+    </a>
+    <ul id="navList">
+      <li><a href="#signature">Signature</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#why">Why Sāmya</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="nav-cta" href="https://wa.me/919902220334?text=Hi%20SAMYA!%20I'd%20like%20to%20order" target="_blank" rel="noopener">Order on WhatsApp</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="eyebrow">Est. 2025 · Bhilai–Durg</div>
+    <h1 class="wordmark">Sāmya</h1>
+    <div class="hindi-big">साम्य — balance</div>
+    <p class="tagline">Tossed Fresh, Crafted Gourmet.</p>
+    <p class="sub">Clean · Pure Veg · High Protein — weight loss, office lunch &amp; gut-friendly meal bowls with 30–50g protein each.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://wa.me/919902220334?text=Hi%20SAMYA!%20I'd%20like%20to%20order" target="_blank" rel="noopener">Order on WhatsApp</a>
+      <a class="btn btn-ghost" href="#menu">View Full Menu</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="track">
+    <span>Pure Veg</span><span class="dot">·</span><span>No Additives</span><span class="dot">·</span><span>30–50g Protein</span><span class="dot">·</span>
+    <span>Fresh From The Farm</span><span class="dot">·</span><span>Homegrown Herbs</span><span class="dot">·</span><span>Bhilai–Durg</span><span class="dot">·</span>
+    <span>Pure Veg</span><span class="dot">·</span><span>No Additives</span><span class="dot">·</span><span>30–50g Protein</span><span class="dot">·</span>
+    <span>Fresh From The Farm</span><span class="dot">·</span><span>Homegrown Herbs</span><span class="dot">·</span><span>Bhilai–Durg</span><span class="dot">·</span>
+  </div>
+</div>
+
+<section class="section" id="signature">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Straight From Our Kitchen</div>
+      <h2>Signature Bowls</h2>
+      <p>What Bhilai–Durg keeps re-ordering — freshly tossed, never pre-made.</p>
+    </div>
+    <div class="sig-grid">
+      <article class="sig-card">
+        <div class="ph"><img src="Assets/3.jpeg" alt="Caesar Salad with Cajun Paneer in a bowl with dressing on the side"></div>
+        <div class="body">
+          <h3>Caesar Salad with Cajun Paneer</h3>
+          <div class="kcal">≈300 kcal · 20–22g protein · ₹299</div>
+          <p>A high-protein take on the classic Caesar — Cajun-spiced paneer, crisp iceberg, cherry tomatoes, sweet corn, croutons, parmesan, chia &amp; pumpkin seeds, creamy Caesar dressing.</p>
+        </div>
+      </article>
+      <article class="sig-card">
+        <div class="ph"><img src="Assets/6.jpeg" alt="Mango smoothie bowl topped with granola, seeds and dark chocolate"></div>
+        <div class="body">
+          <h3>Mango Smoothie Bowl</h3>
+          <div class="kcal">Antioxidant-rich · pure veg · seasonal</div>
+          <p>Naturally ripened Alphonso mango and moringa, blended thick and finished with granola, sunflower &amp; pumpkin seeds, chia and shaved dark chocolate.</p>
+        </div>
+      </article>
+      <article class="sig-card">
+        <div class="ph"><img src="Assets/5.jpeg" alt="SĀMYA freshly made Mango Muse smoothie tub, 250ml"></div>
+        <div class="body">
+          <h3>Mango Muse Smoothie</h3>
+          <div class="kcal">Freshly made · 250ml · hung curd, mix seeds, milk</div>
+          <p>Alphonso mango blended with creamy Greek-style hung curd and milk — high protein, no refined sugar, no artificial additives. Sealed fresh for delivery.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="menu" style="background:var(--lilac-soft);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Our Menu</div>
+      <h2>Crafted for Balance</h2>
+      <p>Pure vegetarian &amp; vegan-friendly. Prepared fresh from fresh ingredients — every order.</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="bowls">Meal Bowls</button>
+      <button class="tab-btn" data-tab="protein">Protein Box &amp; Sandwiches</button>
+      <button class="tab-btn" data-tab="salads">Salads</button>
+      <button class="tab-btn" data-tab="smoothies">Smoothies &amp; Cold Press</button>
+    </div>
+
+    <div class="menu-panel active" id="bowls">
+      <div class="menu-grid">
+        <div class="dish"><div class="dish-row"><h4>Paneer / Tofu Makhani Meal Bowl</h4><span class="price">₹299</span></div><p>Classic paneer makhani with a twist — a healthier version you never expected.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Paneer / Tofu Kadhai Meal Bowl</h4><span class="price">₹299</span></div><p>Diced onion, capsicum and freshly made gravy over rice.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Scrambled Paneer Meal Bowl</h4><span class="price">₹299</span></div><p>Paneer bhurji in gravy, served with your choice of rice or millet.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Thai Curry (Red / Green)</h4><span class="price">₹419</span></div><p>Authentic Thai curry served with pineapple basil rice.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Burrito Bowl</h4><span class="price">₹319</span></div><p>A little of everything — sour cream, kidney beans, sweet corn, tossed veggies and rice.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Paneer Malabar Curry Meal Bowl</h4><span class="price">₹289</span></div><p>South-Indian style gravy cooked in coconut milk, mild spice, soothing.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Protein-Rich Brown Rice Paneer Biryani Bowl</h4><span class="price">Ask on order</span></div><p>≈30g protein, 570 kcal. Slow-cooked aromatic biryani with paneer, soya chunks &amp; fibre-rich brown rice, served with a cooling probiotic raita.</p></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="protein">
+      <div class="menu-grid">
+        <div class="sub-label">Protein Box · 30 / 40 / 50 grams</div>
+        <div class="dish"><div class="dish-row"><h4>Paneer Chilly</h4><span class="price">₹199 / 249 / 299</span></div><p>A healthier way to stuff your belly without worrying about calories.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Besan Stuffed Chilla</h4><span class="price">₹245 / 324 / 359</span></div><p>Paneer / tofu tossed in onion-tomato masala, served with mint chutney.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Moong Stuffed Chilla</h4><span class="price">₹245 / 324 / 359</span></div><p>Best for digestion — paneer tossed in onion-tomato masala, mint chutney.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Paneer / Tofu Shashlik</h4><span class="price">₹189 / 269 / 329</span></div><p>Skewered with veggies, overnight-marinated, served with mint chutney.</p></div>
+        <div class="sub-label">Sandwiches</div>
+        <div class="dish"><div class="dish-row"><h4>Pesto Paneer Sandwich</h4><span class="price">₹299</span></div><p>Spinach, banana, almond milk and honey.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Paneer Chipotle Sandwich</h4><span class="price">₹270</span></div><p>Mint, lemon, herbal notes, served chilled.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Asian Paneer Sandwich</h4><span class="price">₹270</span></div><p>Fresh coconut water, chilled and light.</p></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="salads">
+      <div class="menu-grid">
+        <div class="dish"><div class="dish-row"><h4>Caesar Salad with Cajun Paneer</h4><span class="price">₹299</span></div><p>≈300 kcal, 20–22g protein. Cajun paneer, iceberg, cherry tomato, sweet corn, croutons, parmesan, chia &amp; pumpkin seeds, creamy Caesar dressing.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Hummus Salad</h4><span class="price">₹299</span></div><p>≈300 kcal, 20g protein. Creamy hummus from overnight-soaked chickpeas with mixed lettuce &amp; pickled veggies.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Thai Cucumber Salad</h4><span class="price">₹319</span></div><p>≈200 kcal. Cucumber, bell peppers, cherry tomato, papaya, pomegranate, pineapple, Thai-inspired dressing.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Glow Fit Salad</h4><span class="price">₹299</span></div><p>≈200 kcal. Bell peppers, quinoa, carrot, beetroot, kabuli chana, sweet corn, lettuce, feta, pineapple, avocado, apple, raisins, olive oil.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Vitamin Booster Salad</h4><span class="price">₹299</span></div><p>≈200 kcal. Full mix of exotic fruits and seeds — a refreshing power-booster.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Pesto Pasta Salad</h4><span class="price">₹299</span></div><p>≈300 kcal. Whole-wheat pasta cooked al dente with herbs, fresh basil pesto &amp; mixed seeds.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Garden Fresh Salad</h4><span class="price">₹299</span></div><p>≈220 kcal. Exotic veggies tossed in olive oil, served with creamy dressing.</p></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="smoothies">
+      <div class="menu-grid">
+        <div class="sub-label">Smoothies</div>
+        <div class="dish"><div class="dish-row"><h4>Chocolate Smoothie</h4><span class="price">₹219</span></div><p>Dark chocolate with homemade smoothie base — curd, milk, banana and mixed seeds.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Strawberry Smoothie</h4><span class="price">₹279</span></div><p>Fresh strawberries blended into a soothing, antioxidant-rich smoothie.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Mango Thunder</h4><span class="price">₹299</span></div><p>Alphonso mango, moringa, banana &amp; a good amount of mixed seeds.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Mango Black Magic</h4><span class="price">₹299</span></div><p>Alphonso mango, moringa &amp; activated charcoal.</p></div>
+        <div class="sub-label">Cold Pressed · ₹199 each</div>
+        <div class="dish"><div class="dish-row"><h4>Pink Chia</h4><span class="price">₹199</span></div><p>Pineapple + pomegranate + chia seeds.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Immune Booster</h4><span class="price">₹199</span></div><p>Ginger + orange + carrot + turmeric.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Blooming Red</h4><span class="price">₹199</span></div><p>Beetroot + carrot + pomegranate.</p></div>
+        <div class="dish"><div class="dish-row"><h4>Apple Leaf Tonic</h4><span class="price">₹199</span></div><p>Apple + cucumber + spinach + ginger.</p></div>
+        <div class="dish"><div class="dish-row"><h4>ABC</h4><span class="price">₹199</span></div><p>Apple + beetroot + carrot.</p></div>
+      </div>
+    </div>
+
+    <p class="menu-note">Weekly &amp; monthly subscriptions available — DM <a href="https://www.instagram.com/samya.health/" target="_blank" rel="noopener" style="color:var(--plum);font-weight:600;">@samya.health</a> or WhatsApp for details.</p>
+  </div>
+</section>
+
+<section class="section printed" id="printed-menu">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">The Printed Menu</div>
+      <h2>See It As It Comes</h2>
+      <p>Tap any page to view the full card with calories, macros and descriptions.</p>
+    </div>
+    <div class="printed-grid">
+      <figure data-full="Menu/3.png"><img src="Menu/3.png" alt="SĀMYA Meals Menu page"><figcaption>Meal Bowls</figcaption></figure>
+      <figure data-full="Menu/2.png"><img src="Menu/2.png" alt="SĀMYA Protein Menu page"><figcaption>Protein &amp; Sandwiches</figcaption></figure>
+      <figure data-full="Menu/1.png"><img src="Menu/1.png" alt="SĀMYA Salads Menu page"><figcaption>Salads</figcaption></figure>
+      <figure data-full="Menu/4.png"><img src="Menu/4.png" alt="SĀMYA Juice and Smoothie Menu page"><figcaption>Juices &amp; Smoothies</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <div class="container about-wrap">
+    <div class="about-img"><img src="Assets/7.jpeg" alt="SĀMYA menu card with botanical illustrations"></div>
+    <div class="about-text">
+      <div class="eyebrow" style="letter-spacing:.24em;text-transform:uppercase;font-size:.72rem;color:var(--mauve);font-weight:600;">About Us</div>
+      <h2>Rooted in Balance</h2>
+      <div class="lead">Crafted for Balance.</div>
+      <p>SĀMYA — meaning “balance” — is a wellness-focused food &amp; beverage brand dedicated to fresh, nutrient-rich meals and cold-pressed juices for Bhilai–Durg.</p>
+      <p>We combine wholesome ingredients, mindful preparation and modern nutrition to help you eat well without sacrificing flavour. Fresh ingredients straight from the farm, homegrown herbs — nature in one bowl.</p>
+      <p>Every bottle and every meal is crafted with one goal: making healthy living simple, accessible and enjoyable.</p>
+      <div class="badges">
+        <span class="badge">Pure Vegetarian</span>
+        <span class="badge">No Additives</span>
+        <span class="badge">30–50g Protein</span>
+        <span class="badge">Gut Friendly</span>
+        <span class="badge">Weekly / Monthly Subscriptions</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Why Sāmya</div>
+      <h2>Healthy, Made Simple</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="icon">🌿</div><h4>Farm-Fresh, Zero Additives</h4><p>Ingredients sourced fresh with homegrown herbs — no preservatives, ever.</p></div>
+      <div class="why-card"><div class="icon">💪</div><h4>High Protein, Every Bowl</h4><p>30–50g of protein per meal, built for weight loss and muscle support.</p></div>
+      <div class="why-card"><div class="icon">🛵</div><h4>Doorstep Delivery in Bhilai–Durg</h4><p>Order via Zomato, Swiggy, WhatsApp or direct — weekly &amp; monthly plans available.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section gallery" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">@samya.health</div>
+      <h2>From The Feed</h2>
+      <p>Clean • Pure Veg • High Protein — weight loss, office lunch &amp; gut-friendly. 📍 Bhilai–Durg.</p>
+    </div>
+    <div class="ig-grid">
+      <a class="ig-cell" href="https://www.instagram.com/samya.health/" target="_blank" rel="noopener">
+        <img src="Assets/4.jpeg" alt="Caesar salad bowl with cajun paneer">
+        <span class="cap">POV: your comfort food finally got a wellness upgrade. ✨</span>
+      </a>
+      <a class="ig-cell" href="https://www.instagram.com/samya.health/" target="_blank" rel="noopener">
+        <img src="Assets/6.jpeg" alt="Mango smoothie bowl with granola and seeds">
+        <span class="cap">Slow mornings, thick mango bowls, and real toppings. 🥭</span>
+      </a>
+      <a class="ig-cell" href="https://www.instagram.com/samya.health/" target="_blank" rel="noopener">
+        <img src="Assets/5.jpeg" alt="Mango Muse smoothie tub">
+        <span class="cap">Freshly made Mango Muse — hung curd, mix seeds, milk. No refined sugar.</span>
+      </a>
+      <a class="ig-cell" href="https://www.instagram.com/samya.health/" target="_blank" rel="noopener">
+        <img src="Assets/3.jpeg" alt="Caesar salad with cajun paneer close up">
+        <span class="cap">Healthy salads, part 1. Order from us or DM. 👉🏻👈🏻</span>
+      </a>
+      <a class="ig-cell" href="https://www.instagram.com/samya.health/" target="_blank" rel="noopener">
+        <img src="Assets/1.jpeg" alt="SĀMYA menu card flatlay">
+        <span class="cap">“Tossed Fresh, Crafted Gourmet.” Est. 2025.</span>
+      </a>
+      <a class="ig-cell" href="https://www.instagram.com/samya.health/" target="_blank" rel="noopener">
+        <img src="Assets/2.jpeg" alt="SĀMYA menu card with botanical print">
+        <span class="cap">Fresh ingredients straight from the farm and homegrown herbs.</span>
+      </a>
+      <a class="ig-cell" href="https://www.instagram.com/samya.health/" target="_blank" rel="noopener">
+        <img src="Assets/7.jpeg" alt="SĀMYA menu card detail">
+        <span class="cap">Kindly inform us of any food allergies or special dietary requirements.</span>
+      </a>
+      <a class="ig-cell" href="https://www.instagram.com/samya.health/" target="_blank" rel="noopener">
+        <img src="logo.jpg" alt="SĀMYA brand mark">
+        <span class="cap">SĀMYA · साम्य — balance in one bowl.</span>
+      </a>
+    </div>
+    <div class="handle"><a href="https://www.instagram.com/samya.health/" target="_blank" rel="noopener">Follow @samya.health →</a></div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Order Your Bowl of Balance</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Contact &amp; Location</h3>
+        <div class="contact-row"><span class="dot"></span> Bhilai–Durg, Chhattisgarh</div>
+        <div class="contact-row"><span class="dot"></span> WhatsApp / Call: +91 99022 20334</div>
+        <div class="contact-row"><span class="dot"></span> Email: msamyainfo@gmail.com</div>
+        <div class="contact-row"><span class="dot"></span> Instagram: <a href="https://www.instagram.com/samya.health/" target="_blank" rel="noopener" style="color:var(--plum);font-weight:600;">@samya.health</a></div>
+        <a class="btn btn-plum" href="https://wa.me/919902220334?text=Hi%20SAMYA!%20I'd%20like%20to%20order" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+      <div class="contact-card">
+        <h3>Order Now</h3>
+        <p style="font-size:.9rem;color:#5a4a58;">Available for delivery on:</p>
+        <div class="order-platforms">
+          <span class="platform">Zomato</span>
+          <span class="platform">Swiggy</span>
+          <span class="platform">WhatsApp Order</span>
+          <span class="platform">Direct Delivery</span>
+        </div>
+        <p style="font-size:.85rem;color:#5a4a58;margin-top:16px;">Weekly &amp; monthly subscriptions available — DM us on Instagram or WhatsApp for details.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wordmark">Sāmya</div>
+  <p>© 2026 SĀMYA · Est. 2025 · Bhilai–Durg · <a href="https://www.instagram.com/samya.health/" target="_blank" rel="noopener">@samya.health</a></p>
+</footer>
+
+<a class="fab" href="https://wa.me/919902220334?text=Hi%20SAMYA!%20I'd%20like%20to%20order" target="_blank" rel="noopener" aria-label="Order on WhatsApp">💬</a>
+
+<div class="lightbox" id="lightbox">
+  <span class="close" id="lbClose">✕</span>
+  <img id="lbImg" src="" alt="">
+</div>
+
+<script>
+  document.getElementById('menuToggle').addEventListener('click', function(){
+    document.getElementById('navList').classList.toggle('open');
+  });
+  document.querySelectorAll('.tab-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.menu-panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+  document.querySelectorAll('#navList a').forEach(function(a){
+    a.addEventListener('click', function(){document.getElementById('navList').classList.remove('open');});
+  });
+
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  function openLb(src){ lbImg.src = src; lb.classList.add('open'); }
+  function closeLb(){ lb.classList.remove('open'); lbImg.src=''; }
+  document.querySelectorAll('.printed-grid figure').forEach(function(fig){
+    fig.addEventListener('click', function(){ openLb(fig.dataset.full); });
+  });
+  lb.addEventListener('click', closeLb);
+  document.getElementById('lbClose').addEventListener('click', closeLb);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLb(); });
+</script>
+</body>
+</html>

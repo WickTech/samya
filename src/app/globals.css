@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink font-body antialiased;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(227, 184, 230, 0.28), transparent 42%),
+      radial-gradient(circle at 88% 0%, rgba(138, 118, 144, 0.18), transparent 38%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display font-medium leading-tight text-plum-deep;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: rgba(90, 35, 80, 0.9);
+    color: #faf6fa;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.plum.DEFAULT");
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-shell px-6;
+  }
+
+  .wordmark {
+    @apply font-display font-medium uppercase tracking-wordmark;
+  }
+
+  .eyebrow {
+    @apply font-body text-xs font-semibold uppercase tracking-eyebrow text-mauve;
+  }
+
+  .link-underline {
+    @apply border-b-2 border-transparent pb-0.5 transition-colors hover:border-plum;
+  }
+
+  /* Botanical hairline used to separate sections */
+  .leaf-rule {
+    height: 1px;
+    background: repeating-linear-gradient(
+      to right,
+      rgba(90, 35, 80, 0.28) 0 6px,
+      transparent 6px 14px
+    );
+  }
+}
+
+@layer utilities {
+  .text-shadow-plum {
+    text-shadow: 0 2px 24px rgba(61, 22, 54, 0.4);
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
