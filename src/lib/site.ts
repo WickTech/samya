@@ -11,7 +11,7 @@ export const SITE = {
   serviceArea: "Bhilai–Durg, Chhattisgarh",
   pillars: ["Clean", "Pure Veg", "High Protein"] as const,
   useCases: ["Weight loss", "Office lunch", "Gut-friendly"] as const,
-  url: "https://samya.vercel.app",
+  url: "https://samya-tawny.vercel.app",
   description:
     "SĀMYA — fresh, high-protein, pure-veg meal bowls, salads, sandwiches and cold-pressed juices, tossed fresh in Bhilai–Durg.",
 } as const;

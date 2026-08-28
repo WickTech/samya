@@ -77,7 +77,7 @@ export function buildWhatsAppOrderUrl(lines: ResolvedLine[]): string {
     "Delivery address:",
     "Preferred delivery time:",
     "",
-    "(Sent from samya.vercel.app — please confirm availability & final total.)",
+    "(Sent from the SĀMYA website — please confirm availability & final total.)",
   ].join("\n");
 
   return `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(message)}`;
