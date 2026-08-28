@@ -6,8 +6,11 @@ cold-pressed juices.
 
 > _Tossed Fresh, Crafted Gourmet._ · साम्य — *balance*
 
+**Live:** https://samya-tawny.vercel.app
+
 This is the Next.js rebuild of the original single-file site
-(`reference/index.html`). Static-first, Vercel-ready, data-driven menu.
+(`reference/index.html`). Static-first, data-driven menu, deployed on Vercel —
+every push to `main` ships to production automatically.
 
 ## Stack
 
