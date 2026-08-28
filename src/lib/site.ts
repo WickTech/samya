@@ -23,11 +23,23 @@ export const CONTACT = {
   email: "msamyainfo@gmail.com",
   instagram: "samya.health",
   instagramUrl: "https://www.instagram.com/samya.health/",
+  /** AppsFlyer onelink from the Instagram bio — opens the SĀMYA page on Zomato. */
+  zomatoUrl: "https://zomato.onelink.me/xqzv/bvuasnfp",
+  /** WhatsApp product catalog (opens in the WhatsApp app). */
+  whatsappCatalogUrl: "https://wa.me/c/919902220334",
 } as const;
 
 export const ORDER_PLATFORMS = [
-  { name: "Zomato", href: "https://www.zomato.com/", note: "Search “SĀMYA” in Bhilai" },
-  { name: "Swiggy", href: "https://www.swiggy.com/", note: "Search “SĀMYA” in Bhilai" },
+  {
+    name: "Zomato",
+    href: "https://zomato.onelink.me/xqzv/bvuasnfp",
+    note: "Opens the SĀMYA page on Zomato",
+  },
+  {
+    name: "Swiggy",
+    href: "https://www.swiggy.com/",
+    note: "Search “SĀMYA” in Bhilai–Durg",
+  },
 ] as const;
 
 export const NAV_LINKS = [

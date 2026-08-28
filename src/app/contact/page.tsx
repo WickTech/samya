@@ -4,6 +4,12 @@ import { LeafDivider } from "@/components/botanical";
 import { ButtonAnchor, ButtonLink } from "@/components/ui/button-link";
 import { CONTACT, ORDER_PLATFORMS, SITE, whatsappChatUrl } from "@/lib/site";
 
+const CHANNELS = [
+  { label: "WhatsApp order builder", href: "/menu" },
+  { label: "WhatsApp catalog", href: CONTACT.whatsappCatalogUrl, external: true },
+  { label: "Direct doorstep delivery", href: null },
+];
+
 export const metadata: Metadata = {
   title: "Contact",
   description:
@@ -74,19 +80,36 @@ export default function ContactPage() {
           <h2 className="font-display text-2xl text-plum-deep">Order now</h2>
           <p className="mt-3 text-sm text-ink/65">Available for delivery on:</p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <span className="rounded-full bg-lilac-soft px-4 py-1.5 text-xs font-medium text-plum-deep">
-              WhatsApp order builder
-            </span>
-            <span className="rounded-full bg-lilac-soft px-4 py-1.5 text-xs font-medium text-plum-deep">
-              Direct doorstep delivery
-            </span>
+            {CHANNELS.map((c) =>
+              c.href ? (
+                <a
+                  key={c.label}
+                  href={c.href}
+                  target={c.external ? "_blank" : undefined}
+                  rel={c.external ? "noopener noreferrer" : undefined}
+                  className="rounded-full bg-lilac-soft px-4 py-1.5 text-xs font-medium text-plum-deep hover:bg-lilac"
+                >
+                  {c.label}
+                </a>
+              ) : (
+                <span
+                  key={c.label}
+                  className="rounded-full bg-lilac-soft px-4 py-1.5 text-xs font-medium text-plum-deep"
+                >
+                  {c.label}
+                </span>
+              ),
+            )}
             {ORDER_PLATFORMS.map((p) => (
-              <span
+              <a
                 key={p.name}
-                className="rounded-full bg-lilac-soft px-4 py-1.5 text-xs font-medium text-plum-deep"
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-lilac-soft px-4 py-1.5 text-xs font-medium text-plum-deep hover:bg-lilac"
               >
                 {p.name}
-              </span>
+              </a>
             ))}
           </div>
           <p className="mt-4 text-xs text-ink/55">

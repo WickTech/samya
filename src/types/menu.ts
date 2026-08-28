@@ -6,9 +6,11 @@
 export type MenuCategory =
   | "meal-bowls"
   | "protein-box"
+  | "artisanal"
   | "sandwiches"
   | "salads"
   | "smoothies"
+  | "smoothie-bowls"
   | "cold-pressed-juices";
 
 export type DietaryTag = "veg" | "vegan" | "dairy-free";

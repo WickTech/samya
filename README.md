@@ -57,8 +57,15 @@ Everything the menu renders from lives in **`src/data/menu.json`**, typed by
 - All other macro figures are kitchen estimates (`estimated: true`) and are
   confirmed on WhatsApp at order time.
 - The biryani bowl is listed at **₹349** — the original card said "ask on
-  order". **Confirm this price with the kitchen.**
+  order". Macros (P30 / C56 / F24–26 / 570 kcal) are confirmed from Instagram.
+  **Confirm the price with the kitchen.**
 - Sandwich descriptions were rewritten (the original HTML had placeholder copy).
+- **Smoothie Bowls** (Mango Muse, Midnight Cacao, Nutty Velvet, Berry Bliss) and
+  the **Artisanal Menu** (Black Grain Dimsum) come from Instagram posts —
+  descriptions and prices are placeholders pending the real card. See
+  `reference/INSTAGRAM_DATA.md`.
+- A **WhatsApp product catalog** exists (`wa.me/c/919902220334`) and is likely
+  the best source of real prices/images — not yet scraped (in-app only).
 
 Subscription plans: `src/data/subscriptions.ts`. Gallery posts:
 `src/data/gallery.ts`.

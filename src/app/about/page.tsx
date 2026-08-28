@@ -57,6 +57,13 @@ export default function AboutPage() {
         </p>
       </div>
 
+      <blockquote className="mx-auto mt-12 max-w-2xl border-l-2 border-plum pl-6 font-display text-2xl italic leading-snug text-plum-deep">
+        “Redefine the way people think about healthy food — making fresh,
+        high-protein vegetarian meals a part of everyday life, and inspiring
+        healthier lifestyles with food that&apos;s preservative-free, accessible,
+        enjoyable and trustworthy.”
+      </blockquote>
+
       <LeafDivider className="mx-auto my-14 max-w-md" />
 
       <SectionHeading eyebrow="What we hold to" title="Our values" />

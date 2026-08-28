@@ -13,6 +13,11 @@
       "blurb": "Pick your protein weight — 30, 40 or 50 grams per box."
     },
     {
+      "id": "artisanal",
+      "label": "Artisanal Menu",
+      "blurb": "Small-batch specials — higher effort, higher protein."
+    },
+    {
       "id": "sandwiches",
       "label": "Sandwiches",
       "blurb": "Seeded whole-wheat, grilled paneer, made to order."
@@ -26,6 +31,11 @@
       "id": "smoothies",
       "label": "Smoothies",
       "blurb": "250ml, blended thick — curd, milk, banana, mixed seeds, no refined sugar."
+    },
+    {
+      "id": "smoothie-bowls",
+      "label": "Smoothie Bowls",
+      "blurb": "Blended thick, spooned not sipped — granola, seeds and dark chocolate on top."
     },
     {
       "id": "cold-pressed-juices",
@@ -212,6 +222,20 @@
       "kcal": 340,
       "macros": { "protein": 30, "carb": 14, "fat": 18 },
       "dietary": ["veg"],
+      "signature": false,
+      "estimated": true,
+      "image": "/menu/placeholder-box.svg"
+    },
+    {
+      "id": "black-grain-dimsum",
+      "slug": "black-grain-dimsum",
+      "name": "Black Grain Dimsum",
+      "category": "artisanal",
+      "description": "From the artisanal menu — steamed black-grain dumplings, high in protein and calcium. Made in small batches.",
+      "price": { "type": "fixed", "amount": 289 },
+      "kcal": 320,
+      "macros": { "protein": 18, "carb": 34, "fat": 10 },
+      "dietary": ["veg", "vegan", "dairy-free"],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-box.svg"
@@ -415,6 +439,62 @@
       "estimated": true,
       "image": "/menu/placeholder-drink.svg",
       "volumeMl": 250
+    },
+    {
+      "id": "mango-muse-bowl",
+      "slug": "mango-muse-smoothie-bowl",
+      "name": "Mango Muse",
+      "category": "smoothie-bowls",
+      "description": "Naturally ripened Alphonso mango blended thick, finished with granola, sunflower & pumpkin seeds, chia and shaved dark chocolate.",
+      "price": { "type": "fixed", "amount": 299 },
+      "kcal": 340,
+      "macros": { "protein": 12, "carb": 48, "fat": 10 },
+      "dietary": ["veg"],
+      "signature": true,
+      "estimated": true,
+      "image": "/menu/placeholder-drink.svg"
+    },
+    {
+      "id": "midnight-cacao-bowl",
+      "slug": "midnight-cacao-smoothie-bowl",
+      "name": "Midnight Cacao",
+      "category": "smoothie-bowls",
+      "description": "Dark cacao and banana blended thick, topped with granola, seeds and cacao nibs.",
+      "price": { "type": "fixed", "amount": 299 },
+      "kcal": 350,
+      "macros": { "protein": 13, "carb": 46, "fat": 12 },
+      "dietary": ["veg"],
+      "signature": false,
+      "estimated": true,
+      "image": "/menu/placeholder-drink.svg"
+    },
+    {
+      "id": "nutty-velvet-bowl",
+      "slug": "nutty-velvet-smoothie-bowl",
+      "name": "Nutty Velvet",
+      "category": "smoothie-bowls",
+      "description": "Peanut and banana base blended thick, with granola, mixed seeds and dark chocolate.",
+      "price": { "type": "fixed", "amount": 299 },
+      "kcal": 380,
+      "macros": { "protein": 15, "carb": 44, "fat": 16 },
+      "dietary": ["veg"],
+      "signature": false,
+      "estimated": true,
+      "image": "/menu/placeholder-drink.svg"
+    },
+    {
+      "id": "berry-bliss-bowl",
+      "slug": "berry-bliss-smoothie-bowl",
+      "name": "Berry Bliss",
+      "category": "smoothie-bowls",
+      "description": "Mixed berries and curd blended thick, finished with granola, chia and seeds.",
+      "price": { "type": "fixed", "amount": 299 },
+      "kcal": 320,
+      "macros": { "protein": 12, "carb": 44, "fat": 9 },
+      "dietary": ["veg"],
+      "signature": false,
+      "estimated": true,
+      "image": "/menu/placeholder-drink.svg"
     },
     {
       "id": "pink-chia-juice",
