@@ -55,14 +55,24 @@ export default function AboutPage() {
           Every bottle and every meal is crafted with one goal: making healthy
           living simple, accessible and enjoyable.
         </p>
+        <p>
+          Our meals and cold-pressed juices are made using fresh, real
+          ingredients — without preservatives, artificial flavours, artificial
+          colours or powdered mixes. We&apos;re also on a mission to challenge
+          the idea that plant-based meals can&apos;t provide enough protein.
+        </p>
       </div>
 
       <blockquote className="mx-auto mt-12 max-w-2xl border-l-2 border-plum pl-6 font-display text-2xl italic leading-snug text-plum-deep">
         “Redefine the way people think about healthy food — making fresh,
         high-protein vegetarian meals a part of everyday life, and inspiring
         healthier lifestyles with food that&apos;s preservative-free, accessible,
-        enjoyable and trustworthy.”
+        enjoyable and trustworthy — one meal at a time.”
       </blockquote>
+
+      <p className="mx-auto mt-6 max-w-2xl text-center font-script text-2xl text-plum">
+        Real Ingredients. High Protein. Pure Vegetarian. No Preservatives.
+      </p>
 
       <LeafDivider className="mx-auto my-14 max-w-md" />
 

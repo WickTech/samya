@@ -50,10 +50,19 @@
       "name": "Paneer / Tofu Makhani Meal Bowl",
       "category": "meal-bowls",
       "description": "Classic makhani reworked lighter — a healthier version you never expected. Swap paneer for tofu on request.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 450,
-      "macros": { "protein": 28, "carb": 40, "fat": 18 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 28,
+        "carb": 40,
+        "fat": 18
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-bowl.svg"
@@ -64,10 +73,19 @@
       "name": "Paneer / Tofu Kadhai Meal Bowl",
       "category": "meal-bowls",
       "description": "Diced onion and capsicum in a freshly made kadhai gravy, served over rice.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 440,
-      "macros": { "protein": 27, "carb": 45, "fat": 16 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 27,
+        "carb": 45,
+        "fat": 16
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-bowl.svg"
@@ -78,10 +96,19 @@
       "name": "Scrambled Paneer Meal Bowl",
       "category": "meal-bowls",
       "description": "Paneer bhurji simmered in gravy, served with your choice of rice or millet.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 430,
-      "macros": { "protein": 30, "carb": 38, "fat": 17 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 30,
+        "carb": 38,
+        "fat": 17
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-bowl.svg"
@@ -92,10 +119,21 @@
       "name": "Thai Curry (Red / Green)",
       "category": "meal-bowls",
       "description": "Authentic Thai curry served with pineapple basil rice.",
-      "price": { "type": "fixed", "amount": 419 },
+      "price": {
+        "type": "fixed",
+        "amount": 419
+      },
       "kcal": 520,
-      "macros": { "protein": 18, "carb": 55, "fat": 22 },
-      "dietary": ["veg", "vegan", "dairy-free"],
+      "macros": {
+        "protein": 18,
+        "carb": 55,
+        "fat": 22
+      },
+      "dietary": [
+        "veg",
+        "vegan",
+        "dairy-free"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-bowl.svg"
@@ -106,10 +144,19 @@
       "name": "Burrito Bowl",
       "category": "meal-bowls",
       "description": "A little of everything — sour cream, kidney beans, sweet corn, tossed veggies and rice.",
-      "price": { "type": "fixed", "amount": 319 },
+      "price": {
+        "type": "fixed",
+        "amount": 319
+      },
       "kcal": 500,
-      "macros": { "protein": 20, "carb": 58, "fat": 16 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 20,
+        "carb": 58,
+        "fat": 16
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-bowl.svg"
@@ -120,27 +167,120 @@
       "name": "Paneer Malabar Curry Meal Bowl",
       "category": "meal-bowls",
       "description": "South-Indian style gravy cooked in coconut milk — mild spice, soothing.",
-      "price": { "type": "fixed", "amount": 289 },
+      "price": {
+        "type": "fixed",
+        "amount": 289
+      },
       "kcal": 470,
-      "macros": { "protein": 24, "carb": 42, "fat": 20 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 24,
+        "carb": 42,
+        "fat": 20
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-bowl.svg"
+    },
+    {
+      "id": "veg-korean-bibimbap",
+      "slug": "veg-korean-bibimbap",
+      "name": "Veg Korean Bibimbap",
+      "category": "meal-bowls",
+      "description": "Rice bowl with marinated tofu, wakame, julienned carrot, cucumber, green beans, spring onion and gochujang.",
+      "price": {
+        "type": "fixed",
+        "amount": 349
+      },
+      "kcal": 480,
+      "macros": {
+        "protein": 22,
+        "carb": 58,
+        "fat": 16
+      },
+      "dietary": [
+        "veg",
+        "vegan",
+        "dairy-free"
+      ],
+      "signature": false,
+      "estimated": true,
+      "image": "/menu/photos/veg-korean-bibimbap.jpg"
+    },
+    {
+      "id": "veg-teriyaki-rice-bowl",
+      "slug": "veg-teriyaki-rice-bowl",
+      "name": "Veg Teriyaki Rice Bowl",
+      "category": "meal-bowls",
+      "description": "Teriyaki-glazed tofu and vegetables over house fried rice.",
+      "price": {
+        "type": "fixed",
+        "amount": 349
+      },
+      "kcal": 520,
+      "macros": {
+        "protein": 20,
+        "carb": 62,
+        "fat": 18
+      },
+      "dietary": [
+        "veg",
+        "vegan",
+        "dairy-free"
+      ],
+      "signature": false,
+      "estimated": true,
+      "image": "/menu/photos/veg-teriyaki-rice-bowl.jpg"
+    },
+    {
+      "id": "veg-fried-rice",
+      "slug": "veg-fried-rice",
+      "name": "Veg Fried Rice",
+      "category": "meal-bowls",
+      "description": "Wok-tossed fried rice with mixed vegetables and spring onion.",
+      "price": {
+        "type": "fixed",
+        "amount": 249
+      },
+      "kcal": 430,
+      "macros": {
+        "protein": 10,
+        "carb": 68,
+        "fat": 12
+      },
+      "dietary": [
+        "veg",
+        "vegan",
+        "dairy-free"
+      ],
+      "signature": false,
+      "estimated": true,
+      "image": "/menu/photos/veg-fried-rice.jpg"
     },
     {
       "id": "brown-rice-biryani-bowl",
       "slug": "protein-rich-brown-rice-paneer-biryani-bowl",
       "name": "Protein-Rich Brown Rice Paneer Biryani Bowl",
       "category": "meal-bowls",
-      "description": "Slow-cooked aromatic biryani with paneer, soya chunks and fibre-rich brown rice, served with a cooling probiotic raita.",
-      "price": { "type": "fixed", "amount": 349 },
+      "description": "Slow-cooked aromatic biryani (a.k.a. Paneer Soya Hyderabadi Biryani) with paneer, soya chunks and fibre-rich brown rice, served with a cooling probiotic raita.",
+      "price": {
+        "type": "fixed",
+        "amount": 349
+      },
       "kcal": 570,
-      "macros": { "protein": 30, "carb": 56, "fat": 25 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 30,
+        "carb": 56,
+        "fat": 25
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": true,
       "estimated": false,
-      "image": "/menu/placeholder-bowl.svg"
+      "image": "/menu/photos/paneer-soya-biryani.jpg"
     },
     {
       "id": "paneer-chilly-box",
@@ -151,14 +291,29 @@
       "price": {
         "type": "tiered",
         "tiers": [
-          { "grams": 30, "amount": 199 },
-          { "grams": 40, "amount": 249 },
-          { "grams": 50, "amount": 299 }
+          {
+            "grams": 30,
+            "amount": 199
+          },
+          {
+            "grams": 40,
+            "amount": 249
+          },
+          {
+            "grams": 50,
+            "amount": 299
+          }
         ]
       },
       "kcal": 380,
-      "macros": { "protein": 30, "carb": 18, "fat": 20 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 30,
+        "carb": 18,
+        "fat": 20
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-box.svg"
@@ -172,14 +327,29 @@
       "price": {
         "type": "tiered",
         "tiers": [
-          { "grams": 30, "amount": 245 },
-          { "grams": 40, "amount": 324 },
-          { "grams": 50, "amount": 359 }
+          {
+            "grams": 30,
+            "amount": 245
+          },
+          {
+            "grams": 40,
+            "amount": 324
+          },
+          {
+            "grams": 50,
+            "amount": 359
+          }
         ]
       },
       "kcal": 400,
-      "macros": { "protein": 30, "carb": 30, "fat": 16 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 30,
+        "carb": 30,
+        "fat": 16
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-box.svg"
@@ -193,14 +363,29 @@
       "price": {
         "type": "tiered",
         "tiers": [
-          { "grams": 30, "amount": 245 },
-          { "grams": 40, "amount": 324 },
-          { "grams": 50, "amount": 359 }
+          {
+            "grams": 30,
+            "amount": 245
+          },
+          {
+            "grams": 40,
+            "amount": 324
+          },
+          {
+            "grams": 50,
+            "amount": 359
+          }
         ]
       },
       "kcal": 380,
-      "macros": { "protein": 30, "carb": 28, "fat": 14 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 30,
+        "carb": 28,
+        "fat": 14
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-box.svg"
@@ -214,14 +399,29 @@
       "price": {
         "type": "tiered",
         "tiers": [
-          { "grams": 30, "amount": 189 },
-          { "grams": 40, "amount": 269 },
-          { "grams": 50, "amount": 329 }
+          {
+            "grams": 30,
+            "amount": 189
+          },
+          {
+            "grams": 40,
+            "amount": 269
+          },
+          {
+            "grams": 50,
+            "amount": 329
+          }
         ]
       },
       "kcal": 340,
-      "macros": { "protein": 30, "carb": 14, "fat": 18 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 30,
+        "carb": 14,
+        "fat": 18
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-box.svg"
@@ -232,13 +432,24 @@
       "name": "Black Grain Dimsum",
       "category": "artisanal",
       "description": "From the artisanal menu — steamed black-grain dumplings, high in protein and calcium. Made in small batches.",
-      "price": { "type": "fixed", "amount": 289 },
+      "price": {
+        "type": "fixed",
+        "amount": 289
+      },
       "kcal": 320,
-      "macros": { "protein": 18, "carb": 34, "fat": 10 },
-      "dietary": ["veg", "vegan", "dairy-free"],
+      "macros": {
+        "protein": 18,
+        "carb": 34,
+        "fat": 10
+      },
+      "dietary": [
+        "veg",
+        "vegan",
+        "dairy-free"
+      ],
       "signature": false,
       "estimated": true,
-      "image": "/menu/placeholder-box.svg"
+      "image": "/menu/photos/black-grain-dimsum.jpg"
     },
     {
       "id": "pesto-paneer-sandwich",
@@ -246,10 +457,19 @@
       "name": "Pesto Paneer Sandwich",
       "category": "sandwiches",
       "description": "Grilled paneer, fresh basil pesto and greens on seeded whole-wheat bread.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 430,
-      "macros": { "protein": 24, "carb": 40, "fat": 18 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 24,
+        "carb": 40,
+        "fat": 18
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-sandwich.svg"
@@ -260,10 +480,19 @@
       "name": "Paneer Chipotle Sandwich",
       "category": "sandwiches",
       "description": "Smoky chipotle paneer, crunchy slaw and herbed mayo on whole-wheat.",
-      "price": { "type": "fixed", "amount": 270 },
+      "price": {
+        "type": "fixed",
+        "amount": 270
+      },
       "kcal": 410,
-      "macros": { "protein": 22, "carb": 38, "fat": 17 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 22,
+        "carb": 38,
+        "fat": 17
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-sandwich.svg"
@@ -274,10 +503,19 @@
       "name": "Asian Paneer Sandwich",
       "category": "sandwiches",
       "description": "Sesame-soy paneer, pickled carrot and cucumber, sriracha mayo.",
-      "price": { "type": "fixed", "amount": 270 },
+      "price": {
+        "type": "fixed",
+        "amount": 270
+      },
       "kcal": 405,
-      "macros": { "protein": 22, "carb": 39, "fat": 16 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 22,
+        "carb": 39,
+        "fat": 16
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-sandwich.svg"
@@ -288,10 +526,19 @@
       "name": "Caesar Salad with Cajun Paneer",
       "category": "salads",
       "description": "Cajun-spiced paneer, crisp iceberg, cherry tomato, sweet corn, croutons, parmesan, chia and pumpkin seeds, creamy Caesar dressing.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 300,
-      "macros": { "protein": 21, "carb": 10, "fat": 20 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 21,
+        "carb": 10,
+        "fat": 20
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": true,
       "estimated": false,
       "image": "/menu/placeholder-salad.svg"
@@ -302,10 +549,21 @@
       "name": "Hummus Salad",
       "category": "salads",
       "description": "Creamy hummus from overnight-soaked chickpeas with mixed lettuce and pickled veggies.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 300,
-      "macros": { "protein": 20, "carb": 18, "fat": 25 },
-      "dietary": ["veg", "vegan", "dairy-free"],
+      "macros": {
+        "protein": 20,
+        "carb": 18,
+        "fat": 25
+      },
+      "dietary": [
+        "veg",
+        "vegan",
+        "dairy-free"
+      ],
       "signature": false,
       "estimated": false,
       "image": "/menu/placeholder-salad.svg"
@@ -316,10 +574,21 @@
       "name": "Thai Cucumber Salad",
       "category": "salads",
       "description": "Cucumber, bell pepper, cherry tomato, papaya, pomegranate and pineapple in a Thai-inspired dressing.",
-      "price": { "type": "fixed", "amount": 319 },
+      "price": {
+        "type": "fixed",
+        "amount": 319
+      },
       "kcal": 200,
-      "macros": { "protein": 4, "carb": 10, "fat": 5 },
-      "dietary": ["veg", "vegan", "dairy-free"],
+      "macros": {
+        "protein": 4,
+        "carb": 10,
+        "fat": 5
+      },
+      "dietary": [
+        "veg",
+        "vegan",
+        "dairy-free"
+      ],
       "signature": false,
       "estimated": false,
       "image": "/menu/placeholder-salad.svg"
@@ -330,10 +599,19 @@
       "name": "Glow Fit Salad",
       "category": "salads",
       "description": "Bell pepper, quinoa, carrot, beetroot, kabuli chana, sweet corn, lettuce, feta, pineapple, avocado, apple and raisins with olive oil.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 200,
-      "macros": { "protein": 4, "carb": 10, "fat": 5 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 4,
+        "carb": 10,
+        "fat": 5
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": false,
       "image": "/menu/placeholder-salad.svg"
@@ -344,10 +622,21 @@
       "name": "Vitamin Booster Salad",
       "category": "salads",
       "description": "A full mix of exotic fruit and seeds — a refreshing power booster.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 200,
-      "macros": { "protein": 4, "carb": 10, "fat": 5 },
-      "dietary": ["veg", "vegan", "dairy-free"],
+      "macros": {
+        "protein": 4,
+        "carb": 10,
+        "fat": 5
+      },
+      "dietary": [
+        "veg",
+        "vegan",
+        "dairy-free"
+      ],
       "signature": false,
       "estimated": false,
       "image": "/menu/placeholder-salad.svg"
@@ -358,10 +647,19 @@
       "name": "Pesto Pasta Salad",
       "category": "salads",
       "description": "Whole-wheat pasta cooked al dente with herbs, fresh basil pesto and mixed seeds.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 300,
-      "macros": { "protein": 7, "carb": 20, "fat": 28 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 7,
+        "carb": 20,
+        "fat": 28
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": false,
       "image": "/menu/placeholder-salad.svg"
@@ -372,10 +670,19 @@
       "name": "Garden Fresh Salad",
       "category": "salads",
       "description": "Exotic veggies tossed in olive oil, served with a creamy dressing.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 220,
-      "macros": { "protein": 8, "carb": 18, "fat": 12 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 8,
+        "carb": 18,
+        "fat": 12
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": false,
       "image": "/menu/placeholder-salad.svg"
@@ -386,10 +693,19 @@
       "name": "Chocolate Smoothie",
       "category": "smoothies",
       "description": "Dark chocolate blended with our house base — curd, milk, banana and mixed seeds.",
-      "price": { "type": "fixed", "amount": 219 },
+      "price": {
+        "type": "fixed",
+        "amount": 219
+      },
       "kcal": 280,
-      "macros": { "protein": 12, "carb": 35, "fat": 9 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 12,
+        "carb": 35,
+        "fat": 9
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-drink.svg",
@@ -401,10 +717,19 @@
       "name": "Strawberry Smoothie",
       "category": "smoothies",
       "description": "Sun-ripened strawberries, Greek-style curd and almond milk — antioxidant-rich, no refined sugar.",
-      "price": { "type": "fixed", "amount": 279 },
+      "price": {
+        "type": "fixed",
+        "amount": 279
+      },
       "kcal": 260,
-      "macros": { "protein": 12, "carb": 32, "fat": 8 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 12,
+        "carb": 32,
+        "fat": 8
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-drink.svg",
@@ -416,10 +741,19 @@
       "name": "Mango Thunder",
       "category": "smoothies",
       "description": "Alphonso mango, moringa, banana and a good hit of mixed seeds.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 300,
-      "macros": { "protein": 13, "carb": 40, "fat": 8 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 13,
+        "carb": 40,
+        "fat": 8
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": true,
       "estimated": true,
       "image": "/menu/placeholder-drink.svg",
@@ -431,10 +765,19 @@
       "name": "Mango Black Magic",
       "category": "smoothies",
       "description": "Alphonso mango, moringa and activated charcoal.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 290,
-      "macros": { "protein": 12, "carb": 38, "fat": 8 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 12,
+        "carb": 38,
+        "fat": 8
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-drink.svg",
@@ -446,13 +789,22 @@
       "name": "Mango Muse",
       "category": "smoothie-bowls",
       "description": "Naturally ripened Alphonso mango blended thick, finished with granola, sunflower & pumpkin seeds, chia and shaved dark chocolate.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 340,
-      "macros": { "protein": 12, "carb": 48, "fat": 10 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 12,
+        "carb": 48,
+        "fat": 10
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": true,
       "estimated": true,
-      "image": "/menu/placeholder-drink.svg"
+      "image": "/menu/photos/mango-muse-bowl.jpg"
     },
     {
       "id": "midnight-cacao-bowl",
@@ -460,13 +812,22 @@
       "name": "Midnight Cacao",
       "category": "smoothie-bowls",
       "description": "Dark cacao and banana blended thick, topped with granola, seeds and cacao nibs.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 350,
-      "macros": { "protein": 13, "carb": 46, "fat": 12 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 13,
+        "carb": 46,
+        "fat": 12
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
-      "image": "/menu/placeholder-drink.svg"
+      "image": "/menu/photos/midnight-cacao-bowl.jpg"
     },
     {
       "id": "nutty-velvet-bowl",
@@ -474,13 +835,22 @@
       "name": "Nutty Velvet",
       "category": "smoothie-bowls",
       "description": "Peanut and banana base blended thick, with granola, mixed seeds and dark chocolate.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 380,
-      "macros": { "protein": 15, "carb": 44, "fat": 16 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 15,
+        "carb": 44,
+        "fat": 16
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
-      "image": "/menu/placeholder-drink.svg"
+      "image": "/menu/photos/nutty-velvet-bowl.jpg"
     },
     {
       "id": "berry-bliss-bowl",
@@ -488,27 +858,47 @@
       "name": "Berry Bliss",
       "category": "smoothie-bowls",
       "description": "Mixed berries and curd blended thick, finished with granola, chia and seeds.",
-      "price": { "type": "fixed", "amount": 299 },
+      "price": {
+        "type": "fixed",
+        "amount": 299
+      },
       "kcal": 320,
-      "macros": { "protein": 12, "carb": 44, "fat": 9 },
-      "dietary": ["veg"],
+      "macros": {
+        "protein": 12,
+        "carb": 44,
+        "fat": 9
+      },
+      "dietary": [
+        "veg"
+      ],
       "signature": false,
       "estimated": true,
-      "image": "/menu/placeholder-drink.svg"
+      "image": "/menu/photos/berry-bliss-bowl.jpg"
     },
     {
       "id": "pink-chia-juice",
       "slug": "pink-chia-cold-pressed",
       "name": "Pink Chia",
       "category": "cold-pressed-juices",
-      "description": "Pineapple, pomegranate and chia seeds.",
-      "price": { "type": "fixed", "amount": 199 },
+      "description": "Pineapple, pomegranate, chia seeds and a squeeze of lemon.",
+      "price": {
+        "type": "fixed",
+        "amount": 199
+      },
       "kcal": 140,
-      "macros": { "protein": 2, "carb": 30, "fat": 2 },
-      "dietary": ["veg", "vegan", "dairy-free"],
+      "macros": {
+        "protein": 2,
+        "carb": 30,
+        "fat": 2
+      },
+      "dietary": [
+        "veg",
+        "vegan",
+        "dairy-free"
+      ],
       "signature": false,
       "estimated": true,
-      "image": "/menu/placeholder-juice.svg",
+      "image": "/menu/photos/pink-chia-packaging.jpg",
       "volumeMl": 250
     },
     {
@@ -517,10 +907,21 @@
       "name": "Immune Booster",
       "category": "cold-pressed-juices",
       "description": "Ginger, orange, carrot and turmeric.",
-      "price": { "type": "fixed", "amount": 199 },
+      "price": {
+        "type": "fixed",
+        "amount": 199
+      },
       "kcal": 110,
-      "macros": { "protein": 1, "carb": 26, "fat": 0 },
-      "dietary": ["veg", "vegan", "dairy-free"],
+      "macros": {
+        "protein": 1,
+        "carb": 26,
+        "fat": 0
+      },
+      "dietary": [
+        "veg",
+        "vegan",
+        "dairy-free"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-juice.svg",
@@ -532,10 +933,21 @@
       "name": "Blooming Red",
       "category": "cold-pressed-juices",
       "description": "Beetroot, carrot and pomegranate.",
-      "price": { "type": "fixed", "amount": 199 },
+      "price": {
+        "type": "fixed",
+        "amount": 199
+      },
       "kcal": 130,
-      "macros": { "protein": 2, "carb": 29, "fat": 0 },
-      "dietary": ["veg", "vegan", "dairy-free"],
+      "macros": {
+        "protein": 2,
+        "carb": 29,
+        "fat": 0
+      },
+      "dietary": [
+        "veg",
+        "vegan",
+        "dairy-free"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-juice.svg",
@@ -547,10 +959,21 @@
       "name": "Apple Leaf Tonic",
       "category": "cold-pressed-juices",
       "description": "Apple, cucumber, spinach and ginger.",
-      "price": { "type": "fixed", "amount": 199 },
+      "price": {
+        "type": "fixed",
+        "amount": 199
+      },
       "kcal": 100,
-      "macros": { "protein": 1, "carb": 24, "fat": 0 },
-      "dietary": ["veg", "vegan", "dairy-free"],
+      "macros": {
+        "protein": 1,
+        "carb": 24,
+        "fat": 0
+      },
+      "dietary": [
+        "veg",
+        "vegan",
+        "dairy-free"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-juice.svg",
@@ -562,10 +985,21 @@
       "name": "ABC",
       "category": "cold-pressed-juices",
       "description": "Apple, beetroot and carrot.",
-      "price": { "type": "fixed", "amount": 199 },
+      "price": {
+        "type": "fixed",
+        "amount": 199
+      },
       "kcal": 120,
-      "macros": { "protein": 1, "carb": 28, "fat": 0 },
-      "dietary": ["veg", "vegan", "dairy-free"],
+      "macros": {
+        "protein": 1,
+        "carb": 28,
+        "fat": 0
+      },
+      "dietary": [
+        "veg",
+        "vegan",
+        "dairy-free"
+      ],
       "signature": false,
       "estimated": true,
       "image": "/menu/placeholder-juice.svg",

@@ -63,6 +63,29 @@ Older ~11 posts (Aug 2025 – Jan 2026: Dec 8 2025 Bhilai launch, Holi, 50%-off
 Zomato promo, hummus salad bowl, creamy pesto spaghetti / whole-wheat, treasure
 run event) — captions already in the older scrape file.
 
+## Photos
+
+22 images from the 12 recent posts downloaded to
+`reference/instagram-photos/` (see its `MANIFEST.md`). 10 curated dish/product
+shots copied to `public/menu/photos/` and wired into `menu.json`:
+Veg Korean Bibimbap, Veg Teriyaki Rice Bowl, Veg Fried Rice, the 4 smoothie
+bowls (Mango Muse / Midnight Cacao / Nutty Velvet / Berry Bliss), the biryani
+bowl, Black Grain Dimsum, and a Pink Chia packaging shot.
+
+The 4-frame carousel in post `DT76yPGjxSb` (Jan 2026) is the current **printed
+menu** (Salads / Protein+Sandwiches / Meals / Juice+Smoothie) — same as
+`reference/Menu/*.png` but cleaner. Note the printed card's own sandwich
+descriptions are wrong/placeholder ("Spinach, banana, almond milk, and honey"
+for the Pesto Paneer Sandwich, etc.) — the app's rewritten copy stands.
+
+Full mission / goal text (from the `DZz_tmhCtwV` carousel) → About page.
+Brand line: **"Real Ingredients. High Protein. Pure Vegetarian. No Preservatives."**
+
+## The three new dishes (post DYoitgkFLNm, May 2026)
+
+Veg Korean Bibimbap · Veg Teriyaki Rice Bowl · Veg Fried Rice — added to
+`menu.json` as meal bowls; prices/macros are placeholders pending the real card.
+
 ## New / confirmed facts vs PROJECT_STATE.md
 
 - **WhatsApp catalog exists** (`wa.me/c/919902220334`) — untapped menu+price source.

@@ -8,57 +8,57 @@ export interface GalleryPost {
 }
 
 /**
- * Instagram feed layout. Phase 1 uses placeholder art + real captions
- * pulled from @samya.health; every tile links out to the profile.
- * Swap `image` for a real embed/asset when available.
+ * Instagram feed layout — real captions and (where available) real photos
+ * pulled from @samya.health. Tiles link out to the profile. Placeholder art
+ * fills the gaps until more assets land.
  */
 export const GALLERY_POSTS: GalleryPost[] = [
   {
     id: "comfort-upgrade",
     caption: "POV: your comfort food finally got a wellness upgrade. ✨",
-    image: "/gallery/placeholder-1.svg",
-    href: CONTACT.instagramUrl,
+    image: "/menu/photos/veg-korean-bibimbap.jpg",
+    href: "https://www.instagram.com/p/DYoitgkFLNm/",
   },
   {
     id: "mango-bowls",
-    caption: "Slow mornings, thick mango bowls, and real toppings. 🥭",
-    image: "/gallery/placeholder-2.svg",
-    href: CONTACT.instagramUrl,
+    caption: "Smoothie bowls are here in Bhilai — Mango Muse. 🥭",
+    image: "/menu/photos/mango-muse-bowl.jpg",
+    href: "https://www.instagram.com/p/DYkgs3QCgW6/",
   },
   {
-    id: "mango-muse",
-    caption: "Freshly made Mango Muse — hung curd, mix seeds, milk. No refined sugar.",
-    image: "/gallery/placeholder-3.svg",
-    href: CONTACT.instagramUrl,
+    id: "nutty-velvet",
+    caption: "Nutty Velvet — blended thick, real toppings, no refined sugar.",
+    image: "/menu/photos/nutty-velvet-bowl.jpg",
+    href: "https://www.instagram.com/p/DYkgs3QCgW6/",
   },
   {
-    id: "healthy-salads",
-    caption: "Healthy salads, part 1. Order from us or DM. 👉🏻👈🏻",
-    image: "/gallery/placeholder-4.svg",
-    href: CONTACT.instagramUrl,
+    id: "berry-bliss",
+    caption: "Berry Bliss smoothie bowl. Slow mornings sorted.",
+    image: "/menu/photos/berry-bliss-bowl.jpg",
+    href: "https://www.instagram.com/p/DYkgs3QCgW6/",
   },
   {
-    id: "tossed-fresh",
-    caption: "“Tossed Fresh, Crafted Gourmet.” Est. 2025.",
-    image: "/gallery/placeholder-5.svg",
-    href: CONTACT.instagramUrl,
+    id: "dimsum",
+    caption: "Black Grain Dimsum — from the artisanal menu. High protein & calcium.",
+    image: "/menu/photos/black-grain-dimsum.jpg",
+    href: "https://www.instagram.com/p/DUKWmkligO3/",
   },
   {
-    id: "farm-fresh",
-    caption: "Fresh ingredients straight from the farm and homegrown herbs.",
-    image: "/gallery/placeholder-6.svg",
-    href: CONTACT.instagramUrl,
+    id: "teriyaki",
+    caption: "Veg Teriyaki Rice Bowl — one of three new dishes.",
+    image: "/menu/photos/veg-teriyaki-rice-bowl.jpg",
+    href: "https://www.instagram.com/p/DYoitgkFLNm/",
   },
   {
     id: "biryani-bowl",
-    caption: "Protein-Rich Brown Rice Paneer Biryani Bowl — 30g protein, probiotic raita.",
-    image: "/gallery/placeholder-7.svg",
-    href: CONTACT.instagramUrl,
+    caption: "Paneer Soya Hyderabadi Biryani — 30g protein, probiotic raita.",
+    image: "/menu/photos/paneer-soya-biryani.jpg",
+    href: "https://www.instagram.com/p/DWV8rr0qwbN/",
   },
   {
-    id: "balance",
-    caption: "SĀMYA · साम्य — balance in one bowl.",
-    image: "/gallery/placeholder-8.svg",
-    href: CONTACT.instagramUrl,
+    id: "packaging",
+    caption: "Pink Chia cold-pressed — fresh ingredients from the farm, homegrown herbs.",
+    image: "/menu/photos/pink-chia-packaging.jpg",
+    href: "https://www.instagram.com/p/DaH-ToHt8Ae/",
   },
 ];
