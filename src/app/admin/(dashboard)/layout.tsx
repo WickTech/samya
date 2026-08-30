@@ -10,5 +10,9 @@ export default async function DashboardLayout({
 }) {
   const session = await getSession();
   if (!session) redirect(ADMIN_LOGIN_PATH);
-  return <AdminShell email={session.sub}>{children}</AdminShell>;
+  return (
+    <AdminShell email={session.sub} role={session.role}>
+      {children}
+    </AdminShell>
+  );
 }

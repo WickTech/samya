@@ -6,7 +6,11 @@ import { useState } from "react";
 import { cn } from "@/lib/cn";
 import { SITE } from "@/lib/site";
 import { adminFetch } from "@/lib/admin/client";
-import { ADMIN_LOGIN_PATH } from "@/lib/admin/config";
+import {
+  ADMIN_LOGIN_PATH,
+  ADMIN_ROLE_LABEL,
+  type AdminRole,
+} from "@/lib/admin/config";
 
 const NAV = [
   { href: "/admin", label: "Overview", exact: true, icon: "◧" },
@@ -16,9 +20,11 @@ const NAV = [
 
 export function AdminShell({
   email,
+  role,
   children,
 }: {
   email: string;
+  role: AdminRole;
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
@@ -70,7 +76,12 @@ export function AdminShell({
       <aside className="sticky top-0 hidden h-dvh flex-col border-r border-plum-deep/10 bg-white px-4 py-5 md:flex">
         <Brand />
         <div className="mt-6 flex-1">{navList}</div>
-        <Account email={email} onSignOut={signOut} signingOut={signingOut} />
+        <Account
+          email={email}
+          role={role}
+          onSignOut={signOut}
+          signingOut={signingOut}
+        />
       </aside>
 
       {/* Topbar — mobile */}
@@ -93,6 +104,7 @@ export function AdminShell({
           <div className="mt-3 border-t border-plum-deep/10 pt-3">
             <Account
               email={email}
+              role={role}
               onSignOut={signOut}
               signingOut={signingOut}
             />
@@ -118,18 +130,25 @@ function Brand() {
 
 function Account({
   email,
+  role,
   onSignOut,
   signingOut,
 }: {
   email: string;
+  role: AdminRole;
   onSignOut: () => void;
   signingOut: boolean;
 }) {
   return (
     <div className="space-y-2">
-      <p className="truncate text-xs text-mauve" title={email}>
-        {email}
-      </p>
+      <div className="min-w-0">
+        <p className="truncate text-xs font-semibold text-plum-deep" title={email}>
+          {email}
+        </p>
+        <p className="text-[11px] uppercase tracking-wide text-mauve">
+          {ADMIN_ROLE_LABEL[role]}
+        </p>
+      </div>
       <button
         type="button"
         onClick={onSignOut}

@@ -87,7 +87,7 @@ Zomato / Swiggy are linked as external ordering channels.
 
 ## Admin dashboard
 
-Private owner-only area at **`/admin`** — revenue & analytics, order management
+Private area at **`/admin`** — revenue & analytics, order management
 (status workflow: pending → preparing → out for delivery → delivered), and menu
 CRUD (pricing, 30/40/50 g protein tiers, in-stock toggle, descriptions).
 
@@ -97,19 +97,29 @@ CRUD (pricing, 30/40/50 g protein tiers, in-stock toggle, descriptions).
   unauthenticated requests redirect to `/admin/login` (or `401` for the API).
   Every admin response also carries `X-Robots-Tag: noindex`; `/admin` is
   disallowed in `robots.ts`.
-- One owner account. Session = an HS256 JWT (`jose`) in an `httpOnly` cookie,
-  8-hour lifetime. Password is verified server-side only (scrypt) — see
-  `src/lib/admin/`.
+- Two accounts, `owner` and `dev` (both currently full access). Session = an
+  HS256 JWT (`jose`) carrying the role, in an `httpOnly` cookie, 8-hour
+  lifetime. Passwords verified server-side only (scrypt) — see `src/lib/admin/`.
 
 **Environment** (`.env.local` locally, Vercel project env in prod)
 
 | Var                   | Notes                                                              |
 | --------------------- | ----------------------------------------------------------------- |
-| `ADMIN_EMAIL`         | Owner login email                                                 |
-| `ADMIN_PASSWORD_HASH` | `npm run admin:hash -- "your-password"` → paste the printed line  |
-| `ADMIN_PASSWORD`      | Dev-only plaintext fallback, used only if no hash is set          |
+| `ADMIN_USERS`         | JSON array of `{ email, role, passwordHash }`. Generate a hash with `npm run admin:hash -- "password" email role` |
 | `ADMIN_SESSION_SECRET`| Random string ≥ 32 chars — signs the session cookie               |
 | `KV_REST_API_URL` / `KV_REST_API_TOKEN` | Set automatically when a Vercel KV / Upstash Redis store is attached |
+
+```jsonc
+// ADMIN_USERS (one line in the actual env var)
+[
+  { "email": "owner@samya.example", "role": "owner", "passwordHash": "<salt:key>" },
+  { "email": "dev@example.com",      "role": "dev",   "passwordHash": "<salt:key>" }
+]
+```
+
+Legacy single-owner vars (`ADMIN_EMAIL` + `ADMIN_PASSWORD_HASH` / `ADMIN_PASSWORD`)
+still work when `ADMIN_USERS` is unset. A per-entry `"password"` (plaintext) can
+replace `passwordHash` for local dev.
 
 **Persistence** — `src/lib/admin/store.ts`. Uses Vercel KV / Upstash Redis when
 `KV_REST_API_*` is present, otherwise falls back to a git-ignored

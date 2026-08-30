@@ -11,6 +11,15 @@ export const ADMIN_SESSION_MAX_AGE = 60 * 60 * 8;
 export const ADMIN_LOGIN_PATH = "/admin/login";
 export const ADMIN_HOME_PATH = "/admin";
 
+/** Accounts that may sign in. Both roles currently get full access. */
+export const ADMIN_ROLES = ["owner", "dev"] as const;
+export type AdminRole = (typeof ADMIN_ROLES)[number];
+
+export const ADMIN_ROLE_LABEL: Record<AdminRole, string> = {
+  owner: "Owner",
+  dev: "Developer",
+};
+
 export const ORDER_STATUSES = [
   "pending",
   "preparing",

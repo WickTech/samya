@@ -3,7 +3,7 @@ import {
   ADMIN_SESSION_COOKIE,
   ADMIN_SESSION_MAX_AGE,
 } from "@/lib/admin/config";
-import { checkCredentials } from "@/lib/admin/password";
+import { authenticate } from "@/lib/admin/accounts";
 import { createSessionToken } from "@/lib/admin/session";
 
 export const runtime = "nodejs";
@@ -21,14 +21,15 @@ export async function POST(req: Request) {
   // Fixed cost regardless of outcome — blunts trivial timing / brute force.
   await new Promise((r) => setTimeout(r, 350));
 
-  if (!email || !password || !checkCredentials(email, password)) {
+  const account = email && password ? authenticate(email, password) : null;
+  if (!account) {
     return NextResponse.json(
       { error: "Incorrect email or password." },
       { status: 401 },
     );
   }
 
-  const token = await createSessionToken(email.trim().toLowerCase());
+  const token = await createSessionToken(account.email, account.role);
   const res = NextResponse.json({ ok: true });
   res.cookies.set(ADMIN_SESSION_COOKIE, token, {
     httpOnly: true,

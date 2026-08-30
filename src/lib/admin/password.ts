@@ -5,8 +5,9 @@ import {
 } from "node:crypto";
 
 /**
- * Owner password checks. Node-only (uses node:crypto scrypt) — never import
- * this from middleware. Storage format: "<saltHex>:<keyHex>".
+ * Password hashing + constant-time compares. Node-only (uses node:crypto
+ * scrypt) — never import this from the Edge proxy. Hash format:
+ * "<saltHex>:<keyHex>". Account lookup lives in ./accounts.
  */
 
 const KEY_LEN = 64;
@@ -40,21 +41,4 @@ export function safeEqual(a: string, b: string): boolean {
     return false;
   }
   return timingSafeEqual(ab, bb);
-}
-
-/**
- * Validate a login attempt against env config.
- * - ADMIN_EMAIL         — required, the owner's email.
- * - ADMIN_PASSWORD_HASH — preferred: scrypt hash from `npm run admin:hash`.
- * - ADMIN_PASSWORD      — dev-only fallback plaintext, used if no hash is set.
- */
-export function checkCredentials(email: string, password: string): boolean {
-  const wantEmail = process.env.ADMIN_EMAIL?.trim().toLowerCase();
-  const hash = process.env.ADMIN_PASSWORD_HASH?.trim();
-  const plain = process.env.ADMIN_PASSWORD;
-
-  if (!wantEmail || (!hash && !plain)) return false;
-  if (!safeEqual(email.trim().toLowerCase(), wantEmail)) return false;
-
-  return hash ? verifyPasswordHash(password, hash) : safeEqual(password, plain!);
 }

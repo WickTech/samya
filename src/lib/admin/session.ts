@@ -1,16 +1,20 @@
 import { SignJWT, jwtVerify } from "jose";
-import { ADMIN_SESSION_MAX_AGE } from "@/lib/admin/config";
+import {
+  ADMIN_ROLES,
+  ADMIN_SESSION_MAX_AGE,
+  type AdminRole,
+} from "@/lib/admin/config";
 
 /**
- * Stateless owner session — an HS256 JWT stored in an httpOnly cookie.
- * Uses only `jose` + Web Crypto, so it runs in Edge middleware as well as
- * Node route handlers. Password verification lives in ./password (Node only).
+ * Stateless admin session — an HS256 JWT stored in an httpOnly cookie.
+ * Uses only `jose` + Web Crypto, so it runs in the Edge proxy as well as
+ * Node route handlers. Account + password lookup lives in ./accounts (Node).
  */
 
 export interface AdminSession {
-  /** Owner email. */
+  /** Account email. */
   sub: string;
-  role: "owner";
+  role: AdminRole;
 }
 
 function secretKey(): Uint8Array {
@@ -23,9 +27,12 @@ function secretKey(): Uint8Array {
   return new TextEncoder().encode(secret);
 }
 
-export async function createSessionToken(email: string): Promise<string> {
+export async function createSessionToken(
+  email: string,
+  role: AdminRole,
+): Promise<string> {
   const now = Math.floor(Date.now() / 1000);
-  return new SignJWT({ role: "owner" })
+  return new SignJWT({ role })
     .setProtectedHeader({ alg: "HS256" })
     .setSubject(email)
     .setIssuedAt(now)
@@ -39,8 +46,13 @@ export async function verifySessionToken(
   if (!token) return null;
   try {
     const { payload } = await jwtVerify(token, secretKey());
-    if (payload.role !== "owner" || typeof payload.sub !== "string") return null;
-    return { sub: payload.sub, role: "owner" };
+    if (
+      typeof payload.sub !== "string" ||
+      !ADMIN_ROLES.includes(payload.role as AdminRole)
+    ) {
+      return null;
+    }
+    return { sub: payload.sub, role: payload.role as AdminRole };
   } catch {
     return null;
   }
