@@ -24,6 +24,7 @@ every push to `main` ships to production automatically.
 
 ```bash
 npm install
+cp .env.example .env.local   # then fill in the admin vars (see "Admin dashboard")
 npm run dev      # http://localhost:3000
 npm run build    # production build
 ```
@@ -38,6 +39,7 @@ npm run build    # production build
 | `/about`         | Brand story and values                                            |
 | `/gallery`       | Instagram-style feed grid (links to @samya.health)                |
 | `/contact`       | Contact details + ordering channels                              |
+| `/admin`         | **Private** owner dashboard — revenue, orders, menu (see below)   |
 
 ## Data
 
@@ -83,6 +85,40 @@ availability, delivery slot and final total on chat.
 
 Zomato / Swiggy are linked as external ordering channels.
 
+## Admin dashboard
+
+Private owner-only area at **`/admin`** — revenue & analytics, order management
+(status workflow: pending → preparing → out for delivery → delivered), and menu
+CRUD (pricing, 30/40/50 g protein tiers, in-stock toggle, descriptions).
+
+**Access control**
+
+- `src/proxy.ts` gates every `/admin` and `/api/admin` route on the Edge —
+  unauthenticated requests redirect to `/admin/login` (or `401` for the API).
+  Every admin response also carries `X-Robots-Tag: noindex`; `/admin` is
+  disallowed in `robots.ts`.
+- One owner account. Session = an HS256 JWT (`jose`) in an `httpOnly` cookie,
+  8-hour lifetime. Password is verified server-side only (scrypt) — see
+  `src/lib/admin/`.
+
+**Environment** (`.env.local` locally, Vercel project env in prod)
+
+| Var                   | Notes                                                              |
+| --------------------- | ----------------------------------------------------------------- |
+| `ADMIN_EMAIL`         | Owner login email                                                 |
+| `ADMIN_PASSWORD_HASH` | `npm run admin:hash -- "your-password"` → paste the printed line  |
+| `ADMIN_PASSWORD`      | Dev-only plaintext fallback, used only if no hash is set          |
+| `ADMIN_SESSION_SECRET`| Random string ≥ 32 chars — signs the session cookie               |
+| `KV_REST_API_URL` / `KV_REST_API_TOKEN` | Set automatically when a Vercel KV / Upstash Redis store is attached |
+
+**Persistence** — `src/lib/admin/store.ts`. Uses Vercel KV / Upstash Redis when
+`KV_REST_API_*` is present, otherwise falls back to a git-ignored
+`.data/admin-store.json` for local dev. On first read it seeds the menu from
+`src/data/menu.json` and generates sample orders so the dashboard isn't empty.
+
+> The public site still renders from `src/data/menu.json`. Wiring the public
+> menu to the KV store (so owner edits go live) is the remaining step.
+
 ## Assets
 
 Placeholder botanical SVGs in `public/menu/` and `public/gallery/`. Real
@@ -104,5 +140,6 @@ assets are ready. Original brand assets and the previous site are kept in
 
 ## Not in this phase
 
-Supabase / any database, Razorpay / payments, real auth, a CMS or admin panel,
-live Instagram embeds. See `reference/PROJECT_STATE.md` for the full backlog.
+Razorpay / payments, public-facing accounts, live Instagram embeds, syncing the
+public menu to the admin KV store. See `reference/PROJECT_STATE.md` for the full
+backlog.

@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter, Caveat } from "next/font/google";
 import "./globals.css";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import { OrderProvider } from "@/components/order/order-provider";
-import { OrderDrawer } from "@/components/order/order-drawer";
 import { SITE } from "@/lib/site";
 
 const cormorant = Cormorant_Garamond({
@@ -58,14 +54,7 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${inter.variable} ${caveat.variable}`}
     >
-      <body className="flex min-h-dvh flex-col">
-        <OrderProvider>
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-          <OrderDrawer />
-        </OrderProvider>
-      </body>
+      <body className="min-h-dvh">{children}</body>
     </html>
   );
 }

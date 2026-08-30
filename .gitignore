@@ -14,6 +14,12 @@ next-env.d.ts
 # misc
 .DS_Store
 *.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*-service-account*.json
+secrets.json
 *:Zone.Identifier
 
 # debug
@@ -21,9 +27,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# env
+# env — ignore every variant, keep only the committed template
 .env
-.env*.local
+.env.*
+!.env.example
+
+# local admin data store (dev fallback when no KV is configured) — holds
+# real customer orders + WhatsApp numbers once used
+/.data
+admin-store.json
 
 # vercel
 .vercel
