@@ -1,14 +1,17 @@
 import { promises as fs } from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { Redis } from "@upstash/redis";
 
 /**
  * Tiny persistence layer for the admin dashboard.
  *
- * - Production: Vercel KV / Upstash Redis (whichever KV_REST_API_* or
- *   UPSTASH_REDIS_REST_* env vars the storage integration provides).
- * - Local dev with no KV configured: a JSON file at `.data/admin-store.json`
- *   (git-ignored). Same interface, so nothing else has to care.
+ * - Production: Vercel KV / Upstash Redis. Reads the REST URL + token from
+ *   whatever prefix the storage integration used (KV_*, UPSTASH_REDIS_*, or
+ *   a custom "<PREFIX>_REST_API_URL" / "<PREFIX>_REST_API_TOKEN" pair).
+ * - No Redis env configured: a JSON file under the OS temp dir. Fine for
+ *   local dev; on serverless it is per-instance and ephemeral, so attach a
+ *   Redis store for anything real.
  *
  * The data set for a single-location kitchen is small (hundreds of orders),
  * so every collection is stored as one JSON document under a single key.
@@ -19,15 +22,35 @@ export interface KvBackend {
   write<T>(key: string, value: T): Promise<void>;
 }
 
-const REDIS_URL =
-  process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL;
-const REDIS_TOKEN =
-  process.env.KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN;
+function resolveRedisCreds(): { url: string; token: string } | null {
+  const env = process.env;
 
-export const usingRedis = Boolean(REDIS_URL && REDIS_TOKEN);
+  const known: Array<[string | undefined, string | undefined]> = [
+    [env.KV_REST_API_URL, env.KV_REST_API_TOKEN],
+    [env.UPSTASH_REDIS_REST_URL, env.UPSTASH_REDIS_REST_TOKEN],
+    [env.REDIS_REST_API_URL, env.REDIS_REST_API_TOKEN],
+    [env.STORAGE_REST_API_URL, env.STORAGE_REST_API_TOKEN],
+  ];
+  for (const [url, token] of known) {
+    if (url && token) return { url, token };
+  }
 
-function redisBackend(): KvBackend {
-  const redis = new Redis({ url: REDIS_URL!, token: REDIS_TOKEN! });
+  // Any "<PREFIX>_REST_API_URL" with a matching "<PREFIX>_REST_API_TOKEN".
+  const SUFFIX = "_REST_API_URL";
+  for (const key of Object.keys(env)) {
+    if (!key.endsWith(SUFFIX)) continue;
+    const url = env[key];
+    const token = env[`${key.slice(0, -SUFFIX.length)}_REST_API_TOKEN`];
+    if (url && token) return { url, token };
+  }
+  return null;
+}
+
+const redisCreds = resolveRedisCreds();
+export const usingRedis = redisCreds !== null;
+
+function redisBackend(creds: { url: string; token: string }): KvBackend {
+  const redis = new Redis(creds);
   return {
     // Upstash auto-serialises JSON on set and parses on get.
     read: <T>(key: string) => redis.get<T>(key).then((v) => v ?? null),
@@ -38,8 +61,15 @@ function redisBackend(): KvBackend {
 }
 
 function fileBackend(): KvBackend {
-  const file = path.join(process.cwd(), ".data", "admin-store.json");
+  const file = path.join(os.tmpdir(), "samya-admin-store.json");
   let chain: Promise<unknown> = Promise.resolve();
+
+  if (process.env.NODE_ENV === "production") {
+    console.warn(
+      "[admin] No Redis env found — using an ephemeral file store at " +
+        `${file}. Attach a Redis store and redeploy for real persistence.`,
+    );
+  }
 
   async function load(): Promise<Record<string, unknown>> {
     try {
@@ -68,10 +98,11 @@ function fileBackend(): KvBackend {
       locked(async () => {
         const data = await load();
         data[key] = value;
-        await fs.mkdir(path.dirname(file), { recursive: true });
         await fs.writeFile(file, JSON.stringify(data, null, 2), "utf8");
       }),
   };
 }
 
-export const kv: KvBackend = usingRedis ? redisBackend() : fileBackend();
+export const kv: KvBackend = redisCreds
+  ? redisBackend(redisCreds)
+  : fileBackend();

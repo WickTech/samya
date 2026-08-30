@@ -122,8 +122,10 @@ still work when `ADMIN_USERS` is unset. A per-entry `"password"` (plaintext) can
 replace `passwordHash` for local dev.
 
 **Persistence** — `src/lib/admin/store.ts`. Uses Vercel KV / Upstash Redis when
-`KV_REST_API_*` is present, otherwise falls back to a git-ignored
-`.data/admin-store.json` for local dev. On first read it seeds the menu from
+a `*_REST_API_URL` + `*_REST_API_TOKEN` pair is present (any prefix the storage
+integration picks), otherwise falls back to an **ephemeral** JSON file in the OS
+temp dir — fine for local dev, per-instance and wiped on serverless. Attach a
+Redis store for anything real. On first read it seeds the menu from
 `src/data/menu.json` and generates sample orders so the dashboard isn't empty.
 
 > The public site still renders from `src/data/menu.json`. Wiring the public
